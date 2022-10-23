@@ -1,0 +1,73 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/l0"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/progressBarPing"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/listViewTraceroute"
+            android:visibility="gone" />
+
+        <org.daai.wifiassistant.wifi.netcheck.ClearableEditText
+            android:id="@+id/editTextPing"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:ems="10"
+            android:text="www.baidu.com"
+            android:digits=".1234567890abcdefghijklmnopqrstuvwxyz-:"
+            android:hint="@string/placeholder"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/buttonLaunch"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dip"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bottom_confirm_bg"
+            android:text="@string/activity_button" />
+        <Button
+            android:id="@+id/mtrsetting"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dip"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bottom_confirm_bg"
+            android:text="@string/menu_setting" />
+    </LinearLayout>
+    <include
+        layout="@layout/mtr_details"
+        android:id="@+id/table_title"/>
+    <FrameLayout
+        android:id="@+id/bannerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"></FrameLayout>
+    <ListView
+        android:id="@+id/listViewTraceroute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"></ListView>
+
+</LinearLayout>

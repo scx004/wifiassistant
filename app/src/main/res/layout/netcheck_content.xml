@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:autoLink="web"
+        android:visibility="gone"
+        android:text="@string/wifi_channels_list_url"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_margin="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bottom_confirm_bg"
+            android:text="@string/starttext" />
+
+        <Button
+            android:id="@+id/clean_text"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_margin="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bottom_confirm_bg"
+            android:text="@string/cleantext" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <org.daai.wifiassistant.wifi.netcheck.ClearableEditText
+            android:id="@+id/checktext"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/edit_bg"
+            android:clickable="false"
+            android:text="www.baidu.com"
+            android:digits=".1234567890abcdefghijklmnopqrstuvwxyz-:"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/textPort"
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/edit_bg"
+            android:digits=" -0123456789abcdefghijklmnopqrstuvwxyz"
+            android:gravity="center"
+            android:maxLength="100"
+            android:paddingRight="1dp"
+            android:text="-s 56 -c 5 -w 300"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:visibility="visible" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView_result"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/clean_text"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:scrollbars="vertical"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000"
+        android:textIsSelectable="true"
+        android:textSize="12sp" />
+    <ListView
+        android:id="@android:id/list"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
